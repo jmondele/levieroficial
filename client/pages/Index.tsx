@@ -178,7 +178,7 @@ export default function Index() {
           <Link to="/about" className="relative min-h-[150px] lg:min-h-[220px] rounded-2xl overflow-hidden block hover:opacity-90 transition-opacity">
             <div className="absolute inset-0">
               <img
-                src="/chef/image1.jpeg"
+                src="/chef/image1cut.jpeg"
                 alt="Javier Bernal - Chef"
                 className="w-full h-full object-cover"
                 loading="lazy"
