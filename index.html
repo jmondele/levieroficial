@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello world project</title>
+
+    <!-- Preconnect to font origins for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+
+    <!-- DNS prefetch for external image CDN -->
+    <link rel="dns-prefetch" href="https://api.builder.io" />
+
+    <!-- Preload critical local fonts -->
+    <link rel="preload" href="/font/Galliso.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- Preload critical hero images for LCP optimization - Mobile-first approach -->
+    <!-- Mobile devices (phones) - 640px and below get smallest image -->
+    <link rel="preload" as="image" href="/2T5A8620-640w.webp" type="image/webp" media="(max-width: 640px)" />
+    <!-- Tablets - 641px to 1024px get medium image -->
+    <link rel="preload" as="image" href="/2T5A8620-1280w.webp" type="image/webp" media="(min-width: 641px) and (max-width: 1024px)" />
+    <!-- Desktop - 1025px and above get large image -->
+    <link rel="preload" as="image" href="/2T5A8620-1920w.webp" type="image/webp" media="(min-width: 1025px)" />
+
+    <!-- Preload blur placeholder for instant display -->
+    <link rel="preload" as="image" href="/2T5A8620-blur.jpg" fetchpriority="high" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="module" src="/client/App.tsx"></script>
+  </body>
+</html>
