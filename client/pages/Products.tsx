@@ -292,7 +292,7 @@ export default function Products() {
                             href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${product.name_key}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
+                            className="flex-1 px-4 py-3 rounded-lg bg-[#F57200] hover:bg-[#FFA456] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
                           >
                             {t("products.order")}
                           </a>
@@ -318,7 +318,7 @@ export default function Products() {
                             href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${product.name_key.startsWith('product.') ? t(product.name_key) : product.name_key}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
+                            className="flex-1 px-4 py-3 rounded-lg bg-[#F57200] hover:bg-[#FFA456] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
                           >
                             {t("products.order")}
                           </a>

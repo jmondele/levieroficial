@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
-import OptimizedImage from "@/components/OptimizedImage";
+
 
 export default function Index() {
   const { t } = useLanguage();
@@ -204,12 +204,12 @@ export default function Index() {
       </div>
 
       {/* Newsletter/CTA Section */}
-      <div className="mt-8 lg:mt-12 w-full rounded-2xl bg-gradient-to-r from-[rgba(67,34,15,0.3)] to-[rgba(67,34,15,0.1)] border border-[rgba(239,231,210,0.1)] p-8 md:p-12">
+      <div className="mt-8 lg:mt-12 w-full rounded-2xl bg-[#F57200] p-6 md:p-10">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-galliso text-2xl sm:text-3xl md:text-4xl font-normal leading-[120%] tracking-[2px] uppercase text-[#EFE7D2] mb-4">
+          <h2 className="font-galliso text-2xl sm:text-3xl md:text-4xl font-normal leading-[120%] tracking-[2px] uppercase text-[#161616] mb-4">
             {t("home.newsletter_title") || "Join Our Community"}
           </h2>
-          <p className="text-[#E0D3C4] text-sm md:text-base leading-relaxed mb-8">
+          <p className="text-[#161616] text-sm md:text-base leading-relaxed mb-8">
             {t("home.newsletter_description") || "Get exclusive updates on new snacks, special offers, and culinary delights delivered to your inbox."}
           </p>
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
@@ -218,12 +218,12 @@ export default function Index() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg bg-[rgba(24,24,24,0.5)] border border-[rgba(239,231,210,0.15)] text-[#EFE7D2] placeholder-[#E0D3C4] placeholder-opacity-50 focus:outline-none focus:border-[rgba(239,231,210,0.3)] transition-colors"
+              className="flex-1 px-4 py-3 rounded-lg bg-[rgba(24,24,24,0.5)] border border-[rgba(239,231,210,0.15)] text-[#423B0B] placeholder-[#E0D3C4] placeholder-opacity-50 focus:outline-none focus:border-[rgba(239,231,210,0.3)] transition-colors"
               required
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso font-normal tracking-[1px] uppercase transition-colors whitespace-nowrap"
+              className="px-6 py-3 rounded-lg bg-[#423B0B] hover:bg-[#423B0B] text-[#161616] font-galliso font-normal tracking-[1px] uppercase transition-colors whitespace-nowrap"
             >
               {t("home.subscribe") || "Subscribe"}
             </button>

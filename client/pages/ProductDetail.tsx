@@ -446,7 +446,7 @@ export default function ProductDetail() {
                     href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${t(product.name_key)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-base font-normal leading-[130%] tracking-[1px] uppercase transition-colors w-full md:w-auto"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-[#F57200] hover:bg-[#FFA456] text-[#EFE7D2] font-galliso text-base font-normal leading-[130%] tracking-[1px] uppercase transition-colors w-full md:w-auto"
                   >
                     {t("products.order")}
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
