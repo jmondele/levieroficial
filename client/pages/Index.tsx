@@ -176,13 +176,12 @@ export default function Index() {
 
           {/* Reservation Card */}
           <Link to="/about" className="relative min-h-[150px] lg:min-h-[220px] rounded-2xl overflow-hidden block hover:opacity-90 transition-opacity">
-            <div className="absolute inset-0 opacity-70">
-              <OptimizedImage
-                src="https://cdn.builder.io/api/v1/image/assets%2F0232cb78a60446ae98fdb33e73602887%2Fdc08a145746743cbb5b553a65c82c91f?format=webp&width=800"
+            <div className="absolute inset-0">
+              <img
+                src="/chef/image1.jpeg"
                 alt="Javier Bernal - Chef"
-                className="w-full h-full"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 420px"
-                mobileOptimized={true}
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
