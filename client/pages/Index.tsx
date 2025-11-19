@@ -14,56 +14,13 @@ export default function Index() {
         <div className="flex-1 relative rounded-2xl lg:rounded-r-[48px] overflow-hidden bg-black">
           {/* Background Image */}
           <div className="absolute inset-0">
-            {/* Blur placeholder - loads instantly with dark bg for mobile */}
-            <div
-              className="absolute inset-0 bg-cover bg-center blur-2xl scale-110 transition-opacity duration-300"
-              style={{
-                backgroundImage: 'url(/2T5A8620-blur.jpg)',
-                backgroundColor: '#1a1a1a'
-              }}
-              aria-hidden="true"
+            <img
+              src="/snackers/2T5A8620.jpeg"
+              alt="Snackers"
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+              loading="eager"
             />
-
-            {/* High quality responsive image - Mobile-first approach */}
-            <picture>
-              {/* WebP format for modern browsers - Mobile first */}
-              <source
-                type="image/webp"
-                media="(max-width: 640px)"
-                srcSet="/2T5A8620-640w.webp"
-              />
-              <source
-                type="image/webp"
-                media="(max-width: 1024px)"
-                srcSet="/2T5A8620-1280w.webp"
-              />
-              <source
-                type="image/webp"
-                srcSet="/2T5A8620-1920w.webp"
-              />
-
-              {/* JPEG fallback - Mobile first */}
-              <source
-                type="image/jpeg"
-                media="(max-width: 640px)"
-                srcSet="/2T5A8620-640w.jpg"
-              />
-              <source
-                type="image/jpeg"
-                media="(max-width: 1024px)"
-                srcSet="/2T5A8620-1280w.jpg"
-              />
-
-              {/* Default fallback */}
-              <img
-                src="/2T5A8620-1280w.jpg"
-                alt="Snackers"
-                className="w-full h-full object-cover relative z-10"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-              />
-            </picture>
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-60 z-20" />
           </div>
