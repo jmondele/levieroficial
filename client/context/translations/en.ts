@@ -124,11 +124,13 @@ export const en = {
   "price.snackers_6u": "$8.50",
   "price.snackers_family": "$32",
   "price.snackers_dark": "$11",
-  "price.cheesecake_tamarindo": "$9 (200g)",
-  "price.hummus": "$8 (250g)",
-  "price.cashew_butter": "$15 (200g)",
-  "price.cinnamon_cashew_butter": "$15 (200g)",
-  "price.citric_hot_honey": "$12 (250g)",
+  "price.snackers_dark_6u": "$11",
+  "price.snackers_dark_family": "$40",
+  "price.cheesecake_tamarindo": "$9 | 200g",
+  "price.hummus": "$8 | 250g",
+  "price.cashew_butter": "$15 | 200g",
+  "price.cinnamon_cashew_butter": "$15 | 200g",
+  "price.citric_hot_honey": "$12 | 250g",
 
   // Footer
   "footer.quick_links": "Quick Links",

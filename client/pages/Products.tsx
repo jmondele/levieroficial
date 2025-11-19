@@ -30,7 +30,7 @@ export default function Products() {
       slug: "snackers",
       name_key: "SNACKERS",
       description_key: "product.snackers_6u_desc",
-      image: "/2T5A8628.JPEG",
+      image: "/snackers/2T5A8628.jpeg",
       options: [
         {
           name_key: "6 units",
@@ -49,8 +49,19 @@ export default function Products() {
       slug: "snackers-dark",
       name_key: "product.snackers_dark",
       description_key: "product.snackers_dark_desc",
-      price_key: "price.snackers_dark",
-      image: "/2T5A8639.JPEG",
+      image: "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.43.00_094dc3d2.jpg",
+      options: [
+        {
+          name_key: "6 units",
+          price_key: "price.snackers_dark_6u",
+          slug: "snackers-dark-6u"
+        },
+        {
+          name_key: "Family Size (24 units)",
+          price_key: "price.snackers_dark_family",
+          slug: "snackers-dark-family"
+        }
+      ]
     },
     {
       id: 4,
@@ -66,7 +77,7 @@ export default function Products() {
       name_key: "product.hummus",
       description_key: "product.hummus_desc",
       price_key: "price.hummus",
-      image: "/hummus.JPEG",
+      image: "/hummus/WhatsApp Image 2025-11-17 at 18.41.04_58d00501.jpg",
     },
     {
       id: 6,
@@ -90,7 +101,7 @@ export default function Products() {
       name_key: "product.citric_hot_honey",
       description_key: "product.citric_hot_honey_desc",
       price_key: "price.citric_hot_honey",
-      image: "/2T5A8728.JPEG",
+      image: "/honey/2T5A8728.jpeg",
     },
   ];
 
@@ -195,7 +206,7 @@ export default function Products() {
               <p className="text-[#E0D3C4] font-galliso text-xs uppercase tracking-[1px] mb-4">Follow Us</p>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://www.instagram.com/levier.studio?igsh=MXM4eWtqdWxoMmNwNg=="
+                  href="https://www.instagram.com/levier.studio?igsh=MXNycXR6MzExMmI0Zw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] hover:bg-[rgba(24,24,24,0.7)] transition-colors"
@@ -259,32 +270,66 @@ export default function Products() {
                     {/* Size Options or Single Price */}
                     {product.options ? (
                       <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] space-y-3">
-                        {product.options.map((option, index) => (
-                          <Link
-                            key={index}
-                            to={`/products/${option.slug}`}
-                            className="flex items-center justify-between p-3 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.3)] hover:bg-[rgba(24,24,24,0.5)] transition-colors"
+                        {/* Size Options */}
+                        <div className="space-y-2">
+                          {product.options.map((option, index) => (
+                            <div
+                              key={index}
+                              className="flex items-center justify-between p-3 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.3)]"
+                            >
+                              <span className="font-galliso text-sm font-normal tracking-[1px] uppercase text-[#E0D3C4]">
+                                {option.name_key}
+                              </span>
+                              <span className="font-galliso text-base font-normal tracking-[1px] text-[#EFE7D2]">
+                                {t(option.price_key)}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Action Buttons */}
+                        <div className="flex gap-2">
+                          <a
+                            href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${product.name_key}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 px-4 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
                           >
-                            <span className="font-galliso text-sm font-normal tracking-[1px] uppercase text-[#E0D3C4]">
-                              {option.name_key}
-                            </span>
-                            <span className="font-galliso text-base font-normal tracking-[1px] text-[#EFE7D2]">
-                              {t(option.price_key)}
-                            </span>
+                            {t("products.order")}
+                          </a>
+                          <Link
+                            to={`/products/${product.slug}`}
+                            className="flex-1 px-4 py-3 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] hover:bg-[rgba(24,24,24,0.7)] text-[#E0D3C4] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
+                          >
+                            View Details
                           </Link>
-                        ))}
+                        </div>
                       </div>
                     ) : (
-                      <Link to={`/products/${product.slug}`} className="block">
-                        <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] flex items-center justify-between">
-                          <span className="font-galliso text-lg font-normal tracking-[1px] uppercase text-[#EFE7D2]">
+                      <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] space-y-3">
+                        {/* Price */}
+                        <div className="flex items-center justify-center">
+                          <span className="font-galliso text-xl font-normal tracking-[1px] uppercase text-[#EFE7D2]">
                             {product.price_key && t(product.price_key)}
                           </span>
-                          <span className="px-4 py-2 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] text-[#E0D3C4] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase">
-                            View Details
-                          </span>
                         </div>
-                      </Link>
+                        {/* Action Buttons */}
+                        <div className="flex gap-2">
+                          <a
+                            href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${product.name_key.startsWith('product.') ? t(product.name_key) : product.name_key}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 px-4 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
+                          >
+                            {t("products.order")}
+                          </a>
+                          <Link
+                            to={`/products/${product.slug}`}
+                            className="flex-1 px-4 py-3 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] hover:bg-[rgba(24,24,24,0.7)] text-[#E0D3C4] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase transition-colors text-center"
+                          >
+                            View Details
+                          </Link>
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>

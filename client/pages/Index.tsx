@@ -59,7 +59,7 @@ export default function Index() {
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6 flex items-center gap-2">
               {/* Social buttons */}
               <a
-                href="https://www.instagram.com/levier.studio?igsh=MXM4eWtqdWxoMmNwNg=="
+                href="https://www.instagram.com/levier.studio?igsh=MXNycXR6MzExMmI0Zw%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] hover:bg-[rgba(239,231,210,0.1)] transition-colors"

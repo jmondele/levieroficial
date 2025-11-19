@@ -16,12 +16,22 @@ interface Product {
 }
 
 const products: Record<string, Product> = {
+  "snackers": {
+    id: "snackers",
+    name_key: "SNACKERS",
+    description_key: "product.snackers_6u_desc",
+    price_key: "price.snackers_6u",
+    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
+    details_key: "product.snackers_6u_details",
+    ingredients_key: "product.snackers_6u_ingredients",
+    features: ["Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect pre/post workout", "Available in 6 units or Family Size (24 units)"],
+  },
   "snackers-6u": {
     id: "snackers-6u",
     name_key: "product.snackers_6u",
     description_key: "product.snackers_6u_desc",
     price_key: "price.snackers_6u",
-    images: ["/2T5A8628.JPEG"],
+    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
     details_key: "product.snackers_6u_details",
     ingredients_key: "product.snackers_6u_ingredients",
     features: ["Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect pre/post workout"],
@@ -31,7 +41,7 @@ const products: Record<string, Product> = {
     name_key: "product.snackers_family",
     description_key: "product.snackers_family_desc",
     price_key: "price.snackers_family",
-    images: ["/2T5A8637.JPEG"],
+    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
     features: ["24 units", "Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect for sharing"],
   },
   "snackers-dark": {
@@ -39,9 +49,39 @@ const products: Record<string, Product> = {
     name_key: "product.snackers_dark",
     description_key: "product.snackers_dark_desc",
     price_key: "price.snackers_dark",
-    images: ["/2T5A8639.JPEG"],
+    images: [
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.42.13_23b6a207.jpg",
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.43.00_094dc3d2.jpg",
+      "/snackers/2T5A8639.jpeg"
+    ],
+    ingredients_key: "product.snackers_dark_ingredients",
+    features: ["Sugar-free dark chocolate", "Gluten-free", "Low glycemic index", "56% cacao", "Available in 6 units or Family Size (24 units)"],
+  },
+  "snackers-dark-6u": {
+    id: "snackers-dark-6u",
+    name_key: "product.snackers_dark",
+    description_key: "product.snackers_dark_desc",
+    price_key: "price.snackers_dark_6u",
+    images: [
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.42.13_23b6a207.jpg",
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.43.00_094dc3d2.jpg",
+      "/snackers/2T5A8639.jpeg"
+    ],
     ingredients_key: "product.snackers_dark_ingredients",
     features: ["Sugar-free dark chocolate", "Gluten-free", "Low glycemic index", "56% cacao"],
+  },
+  "snackers-dark-family": {
+    id: "snackers-dark-family",
+    name_key: "product.snackers_dark",
+    description_key: "product.snackers_dark_desc",
+    price_key: "price.snackers_dark_family",
+    images: [
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.42.13_23b6a207.jpg",
+      "/snackerchocolate/WhatsApp Image 2025-11-17 at 18.43.00_094dc3d2.jpg",
+      "/snackers/2T5A8639.jpeg"
+    ],
+    ingredients_key: "product.snackers_dark_ingredients",
+    features: ["24 units", "Sugar-free dark chocolate", "Gluten-free", "Low glycemic index", "56% cacao", "Perfect for sharing"],
   },
   "cheesecake-tamarindo": {
     id: "cheesecake-tamarindo",
@@ -56,7 +96,13 @@ const products: Record<string, Product> = {
     name_key: "product.hummus",
     description_key: "product.hummus_desc",
     price_key: "price.hummus",
-    images: ["/hummus.JPEG"],
+    images: [
+      "/hummus/WhatsApp Image 2025-11-17 at 18.41.04_58d00501.jpg",
+      "/hummus/WhatsApp Image 2025-11-17 at 18.44.46_8faa91b9.jpg",
+      "/hummus/WhatsApp Image 2025-11-17 at 18.44.46_a4906e5b.jpg",
+      "/hummus/2T5A8647.jpeg",
+      "/hummus/2T5A8685.jpeg"
+    ],
     details_key: "product.hummus_details",
     ingredients_key: "product.hummus_ingredients",
     features: ["No additives", "No preservatives", "Fresh ingredients", "Authentic taste"],
@@ -219,7 +265,7 @@ export default function ProductDetail() {
               <p className="text-[#E0D3C4] font-galliso text-xs uppercase tracking-[1px] mb-4">Follow Us</p>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://www.instagram.com/levier.studio?igsh=MXM4eWtqdWxoMmNwNg=="
+                  href="https://www.instagram.com/levier.studio?igsh=MXNycXR6MzExMmI0Zw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] hover:bg-[rgba(24,24,24,0.7)] transition-colors"
@@ -261,14 +307,46 @@ export default function ProductDetail() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left Column - Images */}
               <div className="space-y-6">
-                {/* Main Image */}
-                <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[rgba(24,24,24,0.3)] border border-[rgba(239,231,210,0.15)]">
+                {/* Main Image with Carousel Controls */}
+                <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[rgba(24,24,24,0.3)] border border-[rgba(239,231,210,0.15)] group">
                   <img
                     src={product.images[currentImageIndex]}
                     alt={t(product.name_key)}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
+
+                  {/* Carousel Navigation Arrows (show if multiple images) */}
+                  {product.images.length > 1 && (
+                    <>
+                      {/* Previous Button */}
+                      <button
+                        onClick={() => setCurrentImageIndex((prev) => prev === 0 ? product.images.length - 1 : prev - 1)}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(239,231,210,0.3)] text-[#EFE7D2] opacity-0 group-hover:opacity-100 hover:bg-[rgba(0,0,0,0.9)] transition-all duration-300"
+                        aria-label="Previous image"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+
+                      {/* Next Button */}
+                      <button
+                        onClick={() => setCurrentImageIndex((prev) => prev === product.images.length - 1 ? 0 : prev + 1)}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(239,231,210,0.3)] text-[#EFE7D2] opacity-0 group-hover:opacity-100 hover:bg-[rgba(0,0,0,0.9)] transition-all duration-300"
+                        aria-label="Next image"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </button>
+
+                      {/* Image Counter */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(239,231,210,0.3)] text-[#EFE7D2] text-xs font-galliso tracking-wider">
+                        {currentImageIndex + 1} / {product.images.length}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Image Thumbnails (if multiple images) */}
@@ -280,7 +358,7 @@ export default function ProductDetail() {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`relative w-full aspect-square rounded-lg overflow-hidden border-2 transition-all ${
                           currentImageIndex === index
-                            ? "border-[#EFE7D2]"
+                            ? "border-[#EFE7D2] scale-95"
                             : "border-[rgba(239,231,210,0.15)] hover:border-[rgba(239,231,210,0.3)]"
                         }`}
                       >
@@ -365,10 +443,10 @@ export default function ProductDetail() {
                 {/* Order Button */}
                 <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
                   <a
-                    href="https://wa.me/message/ZUSC5LCKTVRZC1"
+                    href={`https://wa.me/50769072343?text=Hi! I'm interested in ordering ${t(product.name_key)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-8 py-4 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] text-[#E0D3C4] font-galliso text-base font-normal leading-[130%] tracking-[1px] uppercase hover:bg-[rgba(24,24,24,0.7)] transition-colors"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso text-base font-normal leading-[130%] tracking-[1px] uppercase transition-colors w-full md:w-auto"
                   >
                     {t("products.order")}
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
