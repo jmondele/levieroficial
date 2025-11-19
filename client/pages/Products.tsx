@@ -4,13 +4,20 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/context/LanguageContext";
 import { useState } from "react";
 
+interface ProductOption {
+  name_key: string;
+  price_key: string;
+  slug: string;
+}
+
 interface Product {
   id: number;
   slug: string;
   name_key: string;
   description_key: string;
-  price_key: string;
+  price_key?: string;
   image: string;
+  options?: ProductOption[];
 }
 
 export default function Products() {
@@ -20,19 +27,22 @@ export default function Products() {
   const appetizers: Product[] = [
     {
       id: 1,
-      slug: "snackers-6u",
-      name_key: "product.snackers_6u",
+      slug: "snackers",
+      name_key: "SNACKERS",
       description_key: "product.snackers_6u_desc",
-      price_key: "price.snackers_6u",
       image: "/2T5A8628.JPEG",
-    },
-    {
-      id: 2,
-      slug: "snackers-family",
-      name_key: "product.snackers_family",
-      description_key: "product.snackers_family_desc",
-      price_key: "price.snackers_family",
-      image: "/2T5A8637.JPEG",
+      options: [
+        {
+          name_key: "6 units",
+          price_key: "price.snackers_6u",
+          slug: "snackers-6u"
+        },
+        {
+          name_key: "Family Size (24 units)",
+          price_key: "price.snackers_family",
+          slug: "snackers-family"
+        }
+      ]
     },
     {
       id: 3,
@@ -225,39 +235,58 @@ export default function Products() {
                   key={product.id}
                   className="rounded-lg overflow-hidden bg-[rgba(24,24,24,0.5)] border border-[rgba(239,231,210,0.15)] hover:border-[rgba(239,231,210,0.3)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(239,231,210,0.1)]"
                 >
-                  <Link to={`/products/${product.slug}`} className="block">
-                    {/* Product Image */}
-                    <div className="relative w-full h-64 overflow-hidden bg-[rgba(24,24,24,0.3)]">
-                      <img
-                        src={product.image}
-                        alt={t(product.name_key)}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                      />
+                  {/* Product Image */}
+                  <div className="relative w-full h-64 overflow-hidden bg-[rgba(24,24,24,0.3)]">
+                    <img
+                      src={product.image}
+                      alt={product.name_key}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="p-6 space-y-4">
+                    <div>
+                      <h3 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-2">
+                        {product.name_key.startsWith('product.') ? t(product.name_key) : product.name_key}
+                      </h3>
+                      <p className="font-satoshi text-sm font-normal leading-[160%] text-[#E0D3C4]">
+                        {t(product.description_key)}
+                      </p>
                     </div>
 
-                    {/* Product Info */}
-                    <div className="p-6 space-y-4">
-                      <div>
-                        <h3 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-2">
-                          {t(product.name_key)}
-                        </h3>
-                        <p className="font-satoshi text-sm font-normal leading-[160%] text-[#E0D3C4]">
-                          {t(product.description_key)}
-                        </p>
+                    {/* Size Options or Single Price */}
+                    {product.options ? (
+                      <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] space-y-3">
+                        {product.options.map((option, index) => (
+                          <Link
+                            key={index}
+                            to={`/products/${option.slug}`}
+                            className="flex items-center justify-between p-3 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.3)] hover:bg-[rgba(24,24,24,0.5)] transition-colors"
+                          >
+                            <span className="font-galliso text-sm font-normal tracking-[1px] uppercase text-[#E0D3C4]">
+                              {option.name_key}
+                            </span>
+                            <span className="font-galliso text-base font-normal tracking-[1px] text-[#EFE7D2]">
+                              {t(option.price_key)}
+                            </span>
+                          </Link>
+                        ))}
                       </div>
-
-                      {/* Price */}
-                      <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] flex items-center justify-between">
-                        <span className="font-galliso text-lg font-normal tracking-[1px] uppercase text-[#EFE7D2]">
-                          {t(product.price_key)}
-                        </span>
-                        <span className="px-4 py-2 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] text-[#E0D3C4] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase">
-                          View Details
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
+                    ) : (
+                      <Link to={`/products/${product.slug}`} className="block">
+                        <div className="pt-4 border-t border-[rgba(239,231,210,0.15)] flex items-center justify-between">
+                          <span className="font-galliso text-lg font-normal tracking-[1px] uppercase text-[#EFE7D2]">
+                            {product.price_key && t(product.price_key)}
+                          </span>
+                          <span className="px-4 py-2 rounded-lg border border-[rgba(239,231,210,0.15)] bg-[rgba(24,24,24,0.5)] text-[#E0D3C4] font-galliso text-xs font-normal leading-[130%] tracking-[1px] uppercase">
+                            View Details
+                          </span>
+                        </div>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

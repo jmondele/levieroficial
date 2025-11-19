@@ -15,7 +15,7 @@ export default function HistorySection() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[rgba(239,231,210,0.1)] to-transparent rounded-3xl"></div>
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F0232cb78a60446ae98fdb33e73602887%2Fdc08a145746743cbb5b553a65c82c91f?format=webp&width=800"
+              src="/chef/image0cut.jpeg"
               alt="Javier Bernal - Chef & Founder"
               className="w-full h-auto rounded-3xl object-cover shadow-2xl border border-[rgba(239,231,210,0.15)]"
               loading="lazy"

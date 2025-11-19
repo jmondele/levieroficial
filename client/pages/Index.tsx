@@ -1,3 +1,4 @@
+import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -6,6 +7,21 @@ import OptimizedImage from "@/components/OptimizedImage";
 
 export default function Index() {
   const { t } = useLanguage();
+  const [email, setEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubscribe = (e: FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      setSubscribeStatus("error");
+      return;
+    }
+    // Here you would typically send to your backend
+    console.log("Subscribe email:", email);
+    setSubscribeStatus("success");
+    setEmail("");
+    setTimeout(() => setSubscribeStatus("idle"), 3000);
+  };
 
   return (
     <div className="min-h-screen bg-[#0A0B0A] text-[#EFE7D2] p-4 md:p-6">
@@ -41,33 +57,6 @@ export default function Index() {
 
             {/* Social Icons - Bottom Right */}
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6 flex items-center gap-2">
-              {/* Decorative rounded edges */}
-              <div className="absolute -left-6 top-0 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0V24C0 10.7452 10.7452 0 24 0H0Z" fill="#0A0B0A" />
-                </svg>
-              </div>
-              <div className="absolute right-0 -top-6 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 24V0C24 13.2548 13.2548 24 0 24H24Z"
-                    fill="#0A0B0A"
-                  />
-                </svg>
-              </div>
-
               {/* Social buttons */}
               <a
                 href="https://www.instagram.com/levier.studio?igsh=MXM4eWtqdWxoMmNwNg=="
@@ -121,37 +110,11 @@ export default function Index() {
               <img
                 src="/hummus/WhatsApp Image 2025-11-17 at 18.41.04_58d00501.jpg"
                 alt="Products"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
             </div>
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
-              {/* Decorative rounded edges */}
-              <div className="absolute -left-6 top-0 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0V24C0 10.7452 10.7452 0 24 0H0Z" fill="#0A0B0A" />
-                </svg>
-              </div>
-              <div className="absolute right-0 -top-6 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 24V0C24 13.2548 13.2548 24 0 24H24Z"
-                    fill="#0A0B0A"
-                  />
-                </svg>
-              </div>
               <div className="flex items-center gap-3">
                 <span className="font-galliso text-base font-normal leading-[100%] tracking-[1px] uppercase text-[#EFE7D2]">
                   {t("home.products")}
@@ -185,32 +148,6 @@ export default function Index() {
               />
             </div>
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
-              {/* Decorative rounded edges */}
-              <div className="absolute -left-6 top-0 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0V24C0 10.7452 10.7452 0 24 0H0Z" fill="#0A0B0A" />
-                </svg>
-              </div>
-              <div className="absolute right-0 -top-6 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 24V0C24 13.2548 13.2548 24 0 24H24Z"
-                    fill="#0A0B0A"
-                  />
-                </svg>
-              </div>
               <div className="flex items-center gap-3">
                 <span className="font-galliso text-base font-normal leading-[100%] tracking-[1px] uppercase text-[#EFE7D2]">
                   {t("home.about_us")}
@@ -242,32 +179,6 @@ export default function Index() {
               loading="lazy"
             />
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
-              {/* Decorative rounded edges */}
-              <div className="absolute -left-6 top-0 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M0 0V24C0 10.7452 10.7452 0 24 0H0Z" fill="#0A0B0A" />
-                </svg>
-              </div>
-              <div className="absolute right-0 -top-6 w-6 h-6">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 24V0C24 13.2548 13.2548 24 0 24H24Z"
-                    fill="#0A0B0A"
-                  />
-                </svg>
-              </div>
               <div className="flex items-center gap-3">
                 <span className="font-galliso text-base font-normal leading-[100%] tracking-[1px] uppercase text-[#EFE7D2]">
                   {t("home.contact_us")}
@@ -289,6 +200,40 @@ export default function Index() {
               </div>
             </div>
           </Link>
+        </div>
+      </div>
+
+      {/* Newsletter/CTA Section */}
+      <div className="mt-8 lg:mt-12 w-full rounded-2xl bg-gradient-to-r from-[rgba(67,34,15,0.3)] to-[rgba(67,34,15,0.1)] border border-[rgba(239,231,210,0.1)] p-8 md:p-12">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-galliso text-2xl sm:text-3xl md:text-4xl font-normal leading-[120%] tracking-[2px] uppercase text-[#EFE7D2] mb-4">
+            {t("home.newsletter_title") || "Join Our Community"}
+          </h2>
+          <p className="text-[#E0D3C4] text-sm md:text-base leading-relaxed mb-8">
+            {t("home.newsletter_description") || "Get exclusive updates on new snacks, special offers, and culinary delights delivered to your inbox."}
+          </p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              className="flex-1 px-4 py-3 rounded-lg bg-[rgba(24,24,24,0.5)] border border-[rgba(239,231,210,0.15)] text-[#EFE7D2] placeholder-[#E0D3C4] placeholder-opacity-50 focus:outline-none focus:border-[rgba(239,231,210,0.3)] transition-colors"
+              required
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-lg bg-[#43221F] hover:bg-[#5a2f27] text-[#EFE7D2] font-galliso font-normal tracking-[1px] uppercase transition-colors whitespace-nowrap"
+            >
+              {t("home.subscribe") || "Subscribe"}
+            </button>
+          </form>
+          {subscribeStatus === "success" && (
+            <p className="mt-4 text-sm text-green-400">Thank you for subscribing!</p>
+          )}
+          {subscribeStatus === "error" && (
+            <p className="mt-4 text-sm text-red-400">Please enter a valid email address.</p>
+          )}
         </div>
       </div>
 

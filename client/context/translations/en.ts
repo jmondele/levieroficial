@@ -14,6 +14,9 @@ export const en = {
   "home.products": "Products",
   "home.about_us": "About Us",
   "home.contact_us": "Contact Us",
+  "home.newsletter_title": "Join Our Community",
+  "home.newsletter_description": "Get exclusive updates on new snacks, special offers, and culinary delights delivered to your inbox.",
+  "home.subscribe": "Subscribe",
 
   // About Us Page
   "about.title": "About Us",

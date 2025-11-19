@@ -14,6 +14,9 @@ export const es = {
   "home.products": "Productos",
   "home.about_us": "Nosotros",
   "home.contact_us": "Contáctanos",
+  "home.newsletter_title": "Únete a Nuestra Comunidad",
+  "home.newsletter_description": "Recibe actualizaciones exclusivas sobre nuevos snacks, ofertas especiales y delicias culinarias directamente en tu bandeja de entrada.",
+  "home.subscribe": "Suscribirse",
 
   // About Us Page
   "about.title": "Nosotros",
