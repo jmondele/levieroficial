@@ -117,40 +117,13 @@ export default function Index() {
         <div className="w-full lg:w-[420px] flex flex-col gap-4">
           {/* Menu Card */}
           <Link to="/products" className="relative flex-1 min-h-[200px] lg:min-h-[334px] rounded-2xl overflow-hidden block hover:opacity-90 transition-opacity">
-            <div className="absolute inset-0 opacity-70">
-              <picture>
-                <source
-                  type="image/webp"
-                  media="(max-width: 640px)"
-                  srcSet="/hummus-640w.webp"
-                />
-                <source
-                  type="image/webp"
-                  media="(max-width: 1024px)"
-                  srcSet="/hummus-1280w.webp"
-                />
-                <source
-                  type="image/webp"
-                  srcSet="/hummus-1920w.webp"
-                />
-                <source
-                  type="image/jpeg"
-                  media="(max-width: 640px)"
-                  srcSet="/hummus-640w.jpg"
-                />
-                <source
-                  type="image/jpeg"
-                  media="(max-width: 1024px)"
-                  srcSet="/hummus-1280w.jpg"
-                />
-                <img
-                  src="/hummus-1280w.jpg"
-                  alt="Products"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+            <div className="absolute inset-0">
+              <img
+                src="/hummus/WhatsApp Image 2025-11-17 at 18.41.04_58d00501.jpg"
+                alt="Products"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
             <div className="absolute bottom-0 right-0 bg-[#0A0B0A] rounded-tl-3xl p-6">
               {/* Decorative rounded edges */}
