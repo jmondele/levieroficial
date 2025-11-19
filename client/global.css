@@ -1,0 +1,155 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap");
+
+@font-face {
+  font-family: 'Galliso';
+  src: url('/font/Galliso.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galliso';
+  src: url('/font/Galliso Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galliso Outline';
+  src: url('/font/Galliso Outline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galliso Outline';
+  src: url('/font/Galliso Outline Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 18 11 9;
+    --foreground: 43 34 15;
+
+    --card: 18 11 9;
+    --card-foreground: 43 34 15;
+
+    --popover: 18 11 9;
+    --popover-foreground: 43 34 15;
+
+    --primary: 43 34 15;
+    --primary-foreground: 18 11 9;
+
+    --secondary: 0 0 9;
+    --secondary-foreground: 43 34 15;
+
+    --muted: 0 0 9 / 0.5;
+    --muted-foreground: 43 34 15;
+
+    --accent: 0 0 9 / 0.5;
+    --accent-foreground: 43 34 15;
+
+    --destructive: 0 84.2 60.2;
+    --destructive-foreground: 43 34 15;
+
+    --border: 43 34 15 / 0.15;
+    --input: 43 34 15 / 0.15;
+    --ring: 43 34 15;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0 98;
+
+    --sidebar-foreground: 240 5.3 26.1;
+
+    --sidebar-primary: 240 5.9 10;
+
+    --sidebar-primary-foreground: 0 0 98;
+
+    --sidebar-accent: 240 4.8 95.9;
+
+    --sidebar-accent-foreground: 240 5.9 10;
+
+    --sidebar-border: 220 13 91;
+
+    --sidebar-ring: 217.2 91.2 59.8;
+  }
+
+  .dark {
+    --background: 18 11 9;
+    --foreground: 43 34 15;
+
+    --card: 18 11 9;
+    --card-foreground: 43 34 15;
+
+    --popover: 18 11 9;
+    --popover-foreground: 43 34 15;
+
+    --primary: 43 34 15;
+    --primary-foreground: 18 11 9;
+
+    --secondary: 0 0 9;
+    --secondary-foreground: 43 34 15;
+
+    --muted: 0 0 9 / 0.5;
+    --muted-foreground: 43 34 15;
+
+    --accent: 0 0 9 / 0.5;
+    --accent-foreground: 43 34 15;
+
+    --destructive: 0 62.8 30.6;
+    --destructive-foreground: 43 34 15;
+
+    --border: 43 34 15 / 0.15;
+    --input: 43 34 15 / 0.15;
+    --ring: 43 34 15;
+    --sidebar-background: 240 5.9 10;
+    --sidebar-foreground: 240 4.8 95.9;
+    --sidebar-primary: 224.3 76.3 48;
+    --sidebar-primary-foreground: 0 0 100;
+    --sidebar-accent: 240 3.7 15.9;
+    --sidebar-accent-foreground: 240 4.8 95.9;
+    --sidebar-border: 240 3.7 15.9;
+    --sidebar-ring: 217.2 91.2 59.8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#0A0B0A] text-[#EFE7D2];
+    font-family: 'Satoshi', -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
