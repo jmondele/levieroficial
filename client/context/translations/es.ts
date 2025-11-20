@@ -50,8 +50,8 @@ export const es = {
   "contact.title": "Contáctanos",
   "contact.subtitle": "Nos encantaría saber de ti. Ponte en contacto con nosotros hoy.",
   "contact.location": "Ubicación",
-  "contact.address": "123 Restaurant Street",
-  "contact.city": "New York, NY 10001",
+  "contact.address": "Chanis, La Fontana",
+  "contact.city": "Ciudad de Panamá, Panamá",
   "contact.phone": "Teléfono",
   "contact.email": "Correo Electrónico",
   "contact.hours": "Horario",
@@ -119,6 +119,13 @@ export const es = {
   "product.cinnamon_cashew_butter_ingredients": "Cashews tostados, canela de Ceilán, sal de mar",
   "product.citric_hot_honey_ingredients": "Miel cruda, ralladura de naranja, ralladura de limón, pimientos picantes",
   "product.hummus_ingredients": "Garbanzos, tahini, aceite de oliva, jugo de limón, ajo, sal de mar",
+
+  // Product Page
+  "product.where_to_buy": "Dónde Comprar",
+  "product.features": "Características",
+  "product.details": "Detalles",
+  "product.ingredients": "Ingredientes",
+  "product.description": "Descripción",
 
   // Prices
   "price.snackers_6u": "$8.50",

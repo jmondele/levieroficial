@@ -389,7 +389,7 @@ export default function ProductDetail() {
                 {/* Description */}
                 <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
                   <h2 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-3">
-                    Description
+                    {t("product.description")}
                   </h2>
                   <p className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4]">
                     {t(product.description_key)}
@@ -400,7 +400,7 @@ export default function ProductDetail() {
                 {product.details_key && (
                   <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
                     <h2 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-3">
-                      Details
+                      {t("product.details")}
                     </h2>
                     <p className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4]">
                       {t(product.details_key)}
@@ -412,7 +412,7 @@ export default function ProductDetail() {
                 {product.ingredients_key && (
                   <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
                     <h2 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-3">
-                      Ingredients
+                      {t("product.ingredients")}
                     </h2>
                     <p className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4]">
                       {t(product.ingredients_key)}
@@ -424,7 +424,7 @@ export default function ProductDetail() {
                 {product.features && product.features.length > 0 && (
                   <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
                     <h2 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-3">
-                      Features
+                      {t("product.features")}
                     </h2>
                     <ul className="space-y-2">
                       {product.features.map((feature, index) => (
@@ -439,6 +439,27 @@ export default function ProductDetail() {
                     </ul>
                   </div>
                 )}
+
+                {/* Sales Points */}
+                <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
+                  <h2 className="font-galliso text-xl font-normal leading-[120%] tracking-[1px] uppercase text-[#EFE7D2] mb-3">
+                    {t("product.where_to_buy")}
+                  </h2>
+                  <ul className="space-y-2">
+                    <li className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4] flex items-start gap-2">
+                      <span className="text-[#EFE7D2] mt-1">•</span>
+                      Saha Yoga Studio
+                    </li>
+                    <li className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4] flex items-start gap-2">
+                      <span className="text-[#EFE7D2] mt-1">•</span>
+                      Coffee Max Paitilla
+                    </li>
+                    <li className="font-satoshi text-base font-normal leading-[180%] text-[#E0D3C4] flex items-start gap-2">
+                      <span className="text-[#EFE7D2] mt-1">•</span>
+                      Brew Coffee
+                    </li>
+                  </ul>
+                </div>
 
                 {/* Order Button */}
                 <div className="border-t border-[rgba(239,231,210,0.15)] pt-6">
