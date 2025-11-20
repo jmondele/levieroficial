@@ -2,7 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/context/LanguageContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Product {
   id: string;
@@ -147,6 +147,29 @@ export default function ProductDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const product = productId ? products[productId] : null;
+
+  // Preload product images for faster loading
+  useEffect(() => {
+    if (product && product.images.length > 0) {
+      // Preload the first image with high priority
+      const preloadLink = document.createElement('link');
+      preloadLink.rel = 'preload';
+      preloadLink.as = 'image';
+      preloadLink.href = product.images[0];
+      preloadLink.fetchPriority = 'high';
+      document.head.appendChild(preloadLink);
+
+      // Preload additional images in the background
+      product.images.slice(1, 3).forEach((image) => {
+        const img = new Image();
+        img.src = image;
+      });
+
+      return () => {
+        document.head.removeChild(preloadLink);
+      };
+    }
+  }, [product]);
 
   if (!product) {
     return (
@@ -312,8 +335,10 @@ export default function ProductDetail() {
                   <img
                     src={product.images[currentImageIndex]}
                     alt={t(product.name_key)}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    className="w-full h-full object-cover transition-opacity duration-300"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                   />
 
                   {/* Carousel Navigation Arrows (show if multiple images) */}
@@ -365,8 +390,9 @@ export default function ProductDetail() {
                         <img
                           src={image}
                           alt={`${t(product.name_key)} - ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover transition-opacity duration-200"
                           loading="lazy"
+                          decoding="async"
                         />
                       </button>
                     ))}
