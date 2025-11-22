@@ -108,7 +108,7 @@ export default function Index() {
           <Link to="/products" className="relative flex-1 min-h-[200px] lg:min-h-[334px] rounded-2xl overflow-hidden block hover:opacity-90 transition-opacity">
             <div className="absolute inset-0">
               <img
-                src="/hummus/WhatsApp Image 2025-11-17 at 18.41.04_58d00501.jpg"
+                src="/productos/13A0D280-6066-44C7-A9EF-B46C57DA794B.PNG"
                 alt="Products"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"

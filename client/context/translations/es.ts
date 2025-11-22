@@ -132,7 +132,7 @@ export const es = {
   "price.snackers_family": "$32",
   "price.snackers_dark": "$11",
   "price.snackers_dark_6u": "$11",
-  "price.snackers_dark_family": "$40",
+  "price.snackers_dark_family": "$32",
   "price.cheesecake_tamarindo": "$9 | 200g",
   "price.hummus": "$8 | 250g",
   "price.cashew_butter": "$15 | 200g",
