@@ -10,7 +10,7 @@ export const es = {
   "nav.language": "Idioma",
 
   // Home Page
-  "home.title": "Snackers",
+  "home.title": "Modern & addictive kitchen",
   "home.products": "Productos",
   "home.about_us": "Nosotros",
   "home.contact_us": "Contáctanos",
