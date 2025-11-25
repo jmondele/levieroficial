@@ -246,7 +246,7 @@ export default function Products() {
                     {product.image.endsWith('.mp4') ? (
                       <video
                         src={product.image}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain md:object-cover"
                         autoPlay
                         loop
                         muted

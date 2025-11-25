@@ -21,7 +21,7 @@ const products: Record<string, Product> = {
     name_key: "SNACKERS",
     description_key: "product.snackers_6u_desc",
     price_key: "price.snackers_6u",
-    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
+    images: ["/snackers/CUT.jpg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
     details_key: "product.snackers_6u_details",
     ingredients_key: "product.snackers_6u_ingredients",
     features: ["Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect pre/post workout", "Available in 6 units or Family Size (24 units)"],
@@ -31,7 +31,7 @@ const products: Record<string, Product> = {
     name_key: "product.snackers_6u",
     description_key: "product.snackers_6u_desc",
     price_key: "price.snackers_6u",
-    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
+    images: ["/snackers/CUT.jpg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
     details_key: "product.snackers_6u_details",
     ingredients_key: "product.snackers_6u_ingredients",
     features: ["Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect pre/post workout"],
@@ -41,7 +41,7 @@ const products: Record<string, Product> = {
     name_key: "product.snackers_family",
     description_key: "product.snackers_family_desc",
     price_key: "price.snackers_family",
-    images: ["/snackers/2T5A8628.jpeg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
+    images: ["/snackers/CUT.jpg", "/snackers/2T5A8620.jpeg", "/snackers/2T5A8639.jpeg"],
     features: ["24 units", "Gluten-free", "Low glycemic index", "Non-GMO organic dates", "Perfect for sharing"],
   },
   "snackers-dark": {
@@ -88,7 +88,7 @@ const products: Record<string, Product> = {
     name_key: "product.cheesecake_tamarindo",
     description_key: "product.cheesecake_tamarindo_desc",
     price_key: "price.cheesecake_tamarindo",
-    images: ["https://images.unsplash.com/photo-1533134242820-b74891e8923a?w=500&h=500&fit=crop"],
+    images: ["/CHESAKE/image2.jpeg"],
     features: ["Sugar-free", "Authentic Panamanian flavor", "Handcrafted"],
   },
   hummus: {
@@ -112,7 +112,7 @@ const products: Record<string, Product> = {
     name_key: "product.cashew_butter",
     description_key: "product.cashew_butter_desc",
     price_key: "price.cashew_butter",
-    images: ["/2T5A8596.JPEG"],
+    images: ["/CASHEW/copy_1EC3DB2D-E2E5-4601-8638-33303C492D9A.mp4", "/CASHEW/image2.jpeg"],
     details_key: "product.cashew_butter_details",
     ingredients_key: "product.cashew_butter_ingredients",
     features: ["Only 2 ingredients", "Ultra creamy", "Small batch production", "Versatile"],
@@ -332,14 +332,25 @@ export default function ProductDetail() {
               <div className="space-y-6">
                 {/* Main Image with Carousel Controls */}
                 <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-[rgba(24,24,24,0.3)] border border-[rgba(239,231,210,0.15)] group">
-                  <img
-                    src={product.images[currentImageIndex]}
-                    alt={t(product.name_key)}
-                    className="w-full h-full object-cover transition-opacity duration-300"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
+                  {product.images[currentImageIndex].endsWith('.mp4') ? (
+                    <video
+                      src={product.images[currentImageIndex]}
+                      className="w-full h-full object-contain md:object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={product.images[currentImageIndex]}
+                      alt={t(product.name_key)}
+                      className="w-full h-full object-cover transition-opacity duration-300"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                    />
+                  )}
 
                   {/* Carousel Navigation Arrows (show if multiple images) */}
                   {product.images.length > 1 && (
@@ -387,13 +398,22 @@ export default function ProductDetail() {
                             : "border-[rgba(239,231,210,0.15)] hover:border-[rgba(239,231,210,0.3)]"
                         }`}
                       >
-                        <img
-                          src={image}
-                          alt={`${t(product.name_key)} - ${index + 1}`}
-                          className="w-full h-full object-cover transition-opacity duration-200"
-                          loading="lazy"
-                          decoding="async"
-                        />
+                        {image.endsWith('.mp4') ? (
+                          <video
+                            src={image}
+                            className="w-full h-full object-contain md:object-cover"
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <img
+                            src={image}
+                            alt={`${t(product.name_key)} - ${index + 1}`}
+                            className="w-full h-full object-cover transition-opacity duration-200"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
                       </button>
                     ))}
                   </div>
