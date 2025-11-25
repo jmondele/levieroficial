@@ -30,7 +30,7 @@ export default function Products() {
       slug: "snackers",
       name_key: "SNACKERS",
       description_key: "product.snackers_6u_desc",
-      image: "/snackers/2T5A8628.jpeg",
+      image: "/snackers/CUT.jpg",
       options: [
         {
           name_key: "6 units",
@@ -69,7 +69,7 @@ export default function Products() {
       name_key: "product.cheesecake_tamarindo",
       description_key: "product.cheesecake_tamarindo_desc",
       price_key: "price.cheesecake_tamarindo",
-      image: "https://images.unsplash.com/photo-1533134242820-b74891e8923a?w=500&h=500&fit=crop",
+      image: "/CHESAKE/image2.jpeg",
     },
     {
       id: 5,
@@ -85,7 +85,7 @@ export default function Products() {
       name_key: "product.cashew_butter",
       description_key: "product.cashew_butter_desc",
       price_key: "price.cashew_butter",
-      image: "/2T5A8596.JPEG",
+      image: "/CASHEW/image2.jpeg",
     },
     {
       id: 7,
