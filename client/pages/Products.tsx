@@ -55,11 +55,6 @@ export default function Products() {
           name_key: "6 units",
           price_key: "price.snackers_dark_6u",
           slug: "snackers-dark-6u"
-        },
-        {
-          name_key: "Family Size (24 units)",
-          price_key: "price.snackers_dark_family",
-          slug: "snackers-dark-family"
         }
       ]
     },
@@ -85,7 +80,7 @@ export default function Products() {
       name_key: "product.cashew_butter",
       description_key: "product.cashew_butter_desc",
       price_key: "price.cashew_butter",
-      image: "/CASHEW/image2.jpeg",
+      image: "/CASHEW/copy_1EC3DB2D-E2E5-4601-8638-33303C492D9A.mp4",
     },
     {
       id: 7,
@@ -248,12 +243,23 @@ export default function Products() {
                 >
                   {/* Product Image */}
                   <div className="relative w-full h-64 overflow-hidden bg-[rgba(24,24,24,0.3)]">
-                    <img
-                      src={product.image}
-                      alt={product.name_key}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
+                    {product.image.endsWith('.mp4') ? (
+                      <video
+                        src={product.image}
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={product.image}
+                        alt={product.name_key}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    )}
                   </div>
 
                   {/* Product Info */}
