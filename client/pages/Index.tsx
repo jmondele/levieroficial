@@ -47,11 +47,11 @@ export default function Index() {
 
             {/* Hero Text */}
             <div className="mt-auto px-6 md:px-20 pb-12 md:pb-20">
-              <h1 className="font-galliso text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal leading-[100%] tracking-[3px] uppercase text-[#EFE7D2] max-w-4xl mx-auto text-center">
+              <h1 className="font-galliso text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-[100%] tracking-[3px] uppercase text-[#EFE7D2] max-w-4xl mx-auto text-center whitespace-pre-line">
                 {t("home.title")}
               </h1>
-              <div className="flex items-center gap-4 mt-6 max-w-2xl flex-wrap">
-                <p className="font-galliso text-xl md:text-2xl lg:text-3xl font-normal leading-[120%] tracking-[1px] text-[#E0D3C4]">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 w-full flex-wrap">
+                <p className="font-galliso text-xl md:text-2xl lg:text-3xl font-normal leading-[120%] tracking-[1px] text-[#E0D3C4] text-center sm:text-left">
                   Best Seller - Snackers
                 </p>
                 <Link to="/products" className="px-6 py-3 rounded-lg bg-[#F57200] hover:bg-[#E06600] text-[#0A0B0A] font-galliso font-normal tracking-[1px] uppercase transition-colors whitespace-nowrap text-sm md:text-base">

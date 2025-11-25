@@ -10,7 +10,7 @@ export const en = {
   "nav.language": "Language",
 
   // Home Page
-  "home.title": "Modern & Addictive Kitchen",
+  "home.title": "Modern & Addictive\nKITCHEN",
   "home.products": "Products",
   "home.about_us": "About Us",
   "home.contact_us": "Contact Us",
